@@ -39,12 +39,12 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        {% if post.series %}
+        {% if post.categories %}
           <div class="series"></div>
         {% endif %}
 
         {{ content }}
-        <hr />
+        <div class="post-bottom-margin"></div>
         <div class="clearfix">
           {% if page.previous.url %}
           <a

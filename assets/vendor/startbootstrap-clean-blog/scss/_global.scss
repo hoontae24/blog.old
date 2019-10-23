@@ -9,7 +9,7 @@ p {
   line-height: 1.5;
   margin: 30px 0;
   a {
-    text-decoration: underline;
+    // text-decoration: underline;
   }
 }
 
@@ -19,22 +19,26 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 800;
-  @include sans-serif-font;
+  font-weight: 700;
+  font-family: "Noto sans KR", sans-serif;
+  // @include sans-serif-font;
 }
 
 a {
-  color: $gray-900;
+  color: $primary;
+  text-decoration: none;
   @include transition-all;
   &:focus,
   &:hover {
-    color: $primary;
+    color: $cyan;
   }
 }
 
 blockquote {
   font-style: italic;
   color: $gray-600;
+  padding-left: 16px;
+  border-left: 3px solid rgba(135, 206, 250, 0.7) ;
 }
 
 .section-heading {
@@ -74,4 +78,8 @@ img::selection {
 img::-moz-selection {
   color: $white;
   background: transparent;
+}
+
+div.post-bottom-margin {
+  margin-bottom: 50px;
 }

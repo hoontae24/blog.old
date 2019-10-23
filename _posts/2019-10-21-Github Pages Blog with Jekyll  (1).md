@@ -9,6 +9,8 @@ featured: true
 hidden: false
 ---
 
+---
+
 개발자로 취업을 준비하면서 포트폴리오를 만들었던 적이 있다. 개발자, 디자이너 등으로 취업하는 분들은 이러한 경험이 있을 것이다. 내가 어떠한 것들을 만들었는지 정리하면서 그것들을 보여주는 것도 나에겐 참 어려운 일이었다.
 
 어찌어찌 신입 개발자로 취업을 하였지만, 마음 한구석에는 두 가지 고민이 계속 있었는데, 하나는 "개발자로서 어떻게 계속 공부해 나갈 것인가"였고, 또 하나는 "내가 공부하고 관심 있는 것들을 정리할 블로그가 있으면 좋겠다"였다.
@@ -23,8 +25,7 @@ _(Ruby, Gem이 설치되어 있어야 한다. [Ruby 설치하기](https://jekyll
 
 ## **1. jekyll, bundler 설치하기**
 
-
->>Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기입니다.
+>Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기입니다.  
 
 Jekyll은 Ruby로 만들어진 정적 사이트 생성기다. 개인적으로 약간 생소하긴 했지만, 초기 설정만 잘 해두면 쉽게 블로그를 만들어 갈 수 있을 것이다.  
 bundler는 "다른 루비 젬들을 관리하는 루비 젬입니다." 라고 나와있는데, 패키지를 관리해주는 녀석인 듯 하다.(잘 모름)
@@ -35,7 +36,7 @@ bundler는 "다른 루비 젬들을 관리하는 루비 젬입니다." 라고 �
 
 설치가 잘 되었는지 확인해볼 수 있다.
 
-> $ jekyll -v   
+> $ jekyll -v  
 > $ bundler -v
 
 ---
@@ -65,28 +66,27 @@ _(위와 같은 페이지가 나오면 성공)_
 
 이렇게 생성된 블로그를 꾸미는 것도 중요하지만, github pages를 이용해 호스팅 해야한다. _(git 또는 github에 대해서는 자세히 다루지 않겠습니다.)_
 
-#### 1. 호스팅 용 github 저장소 만들기
+### 1. 호스팅 용 github 저장소 만들기
 
 ![깃헙 저장소 만들기](/img/posts/github_first_push.png){: width="100%"}  
 _(Repository name은 반드시 "[username].github.io")_  
 _(여기서 [username]은 github의 username과 동일해야 한다)_
 
-#### 2. 저장소를 만들었으면 로컬에 만들어 둔 블로그 폴더에서 git repository를 초기화하고 커밋 하자.
+### 2. 로컬에서 Git 초기화 및 커밋하기
 
 > $ git init  
-
-  _(블로그 폴더에 .git 이라는 폴더가 생겼으면 성공)_  
-
+  
+_(블로그 폴더에 .git 이라는 폴더가 생겼으면 성공)_  
 > $ git add .  
-> $ git commit -m "initialize blog"
+> $ git commit -m "initialize blog"  
 
 > $ git log  
 
-  _(commit된 목록이 생겼으면 성공)_
+_(commit된 목록이 생겼으면 성공)_
 
-#### 3. github 원격 저장소 설정 및 push 하기
+### 3. github 원격 저장소 설정 및 push 하기
 
-로컬에서 생성된 저장소를 1에서 만들어둔 깃헙 저장소와 연결해야 한다. github에 만들어둔 저장소 페이지에 보면 "https://github.com/hoontae24/hoontae24.github.io.git"와 같은 형식의 주소가 있다. 이것을 복사.
+로컬에서 생성된 저장소를 1에서 만들어둔 깃헙 저장소와 연결해야 한다. github에 만들어둔 저장소 페이지에 보면 clone을 할 수 있도록 "https://github.com/hoontae24/hoontae24.github.io.git"와 같은 형식의 주소가 있다. 이것을 복사.
 
 > $ git remote add origin https://github.com/hoontae24/hoontae24.github.io.git  
 _(git remote add origin [저장소 주소])_
@@ -100,9 +100,7 @@ _(깃헙 계정과 관련해서 인증과정을 거쳐야 할 수도 있음)_
 
 ![연결된 깃헙 저장소](/img/posts/github_first_push.png){: width="100%"}
 
-
 ---
-
 
 ## **4. 호스팅 된 블로그 확인하기**
 
@@ -111,5 +109,5 @@ _(깃헙 계정과 관련해서 인증과정을 거쳐야 할 수도 있음)_
 
 아직은 텅 빈 블로그지만 이제 몇가지 설정만 하면 멀쩡한 블로그가 될 것 같다.
 
-- github 블로그에 게시글 작성하기
-- jekyll theme으로 디자인하기
+- Github 블로그에 게시글 작성하기
+- Jekyll theme으로 디자인하기
