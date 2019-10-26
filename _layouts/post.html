@@ -20,9 +20,9 @@ layout: default
             {% if page.subtitle %}
             <h2 class="subheading">{{ page.subtitle }}</h2>
             {% endif %}
-            <span class="meta"
+            <span class="meta">
               >Posted by
-              <a href="#"
+              <a href="/about"
                 >{% if page.author %}{{ page.author }}{% else %}{{
                   site.author
                 }}{% endif %}</a
@@ -36,7 +36,7 @@ layout: default
     </div>
   </header>
 
-  <div class="container">
+  <div class="container post">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         {% if post.categories %}

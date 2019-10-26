@@ -1,0 +1,35 @@
+---
+layout: page
+title: Posts
+background: '/img/bg-post.jpg'
+permalink: /posts/
+pagination:
+  enabled: true
+---
+
+{% for post in paginator.posts %}
+
+<article class="post-preview">
+  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+    <h4 class="post-title">{{ post.title }}</h4>
+    {% if post.subtitle %}
+    <h6 class="post-subtitle">{{ post.subtitle }}</h6>
+    {% else %}
+    <h6 class="post-subtitle">
+      {{ post.excerpt | strip_html | truncatewords: 25 }}
+    </h6>
+    {% endif %}
+  </a>
+  <p class="post-meta">
+    Posted by {% if post.author %}
+    {{ post.author }}
+    {% else %}
+    {{ site.author }}
+    {% endif %} on {{ post.date | date: '%B %d, %Y' }} &middot; {% include
+    read_time.html content=post.content %}
+  </p>
+</article>
+
+<hr />
+
+{% endfor %} {% include pagination.html %}

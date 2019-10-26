@@ -1,24 +1,33 @@
-title:              Hoontae
-email:              kadr8941@gmail.com
-description:        blog
-author:             hoontae
-baseurl:            ""
-url:                "https://hoontae24.github.io"
+title: 코드쌓기
+email: kadr8941@gmail.com
+description: STACK CODE
+author: hoontae
+baseurl: ''
+url: 'https://hoontae24.github.io'
 
 # Social Profiles
-github_username:    hoontae24
+github_username: hoontae24
 
 # Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+google_analytics: UA-XXXXXXXXX-X # out your google-analytics code
 
 # Build settings
-markdown:           kramdown
-paginate:           5
-paginate_path:      "/posts/page:num/"
+markdown: kramdown
 plugins:
   - jekyll-feed
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
 
+google_fonts: 'Noto+sans+KR:300,400,600,700'
 
-google_fonts: "Noto+sans+KR:300,400,600,700"
+pagination:
+  enabled: true
+  per_page: 5
+  sort_reverse: true
+  title: ':title'
+  permalink: '/page:num'
+  trail: 
+    before: 2
+    after: 2
+
+highlighter: rouge

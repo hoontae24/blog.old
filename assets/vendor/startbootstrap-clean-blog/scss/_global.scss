@@ -1,16 +1,9 @@
 // Global styling for this template
+
 body {
   font-size: 20px;
   color: $gray-900;
-  @include serif-font;
-}
-
-p {
-  line-height: 1.5;
-  margin: 30px 0;
-  a {
-    // text-decoration: underline;
-  }
+  @include sans-serif-font;
 }
 
 h1,
@@ -20,7 +13,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  font-family: "Noto sans KR", sans-serif;
+  font-family: 'Noto sans KR', sans-serif;
   // @include sans-serif-font;
 }
 
@@ -32,14 +25,6 @@ a {
   &:hover {
     color: $cyan;
   }
-}
-
-blockquote {
-  font-style: italic;
-  color: $gray-600;
-  margin-left: 16px;
-  padding-left: 16px;
-  border-left: 3px solid rgba(135, 206, 250, 0.7) ;
 }
 
 .section-heading {
