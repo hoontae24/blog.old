@@ -14,22 +14,62 @@
       {% endif %}
     {% endif %}
   {% endfor %}
-
+  
   <div class="title-wrapper">
     <span class="series-label">SERIES</span> 
-    <span class="series-title">{{ series.title }}</span>
-    <span class="series-count">{{ postIndex | strip }}/{{ seriesCount }}</span>
+    <span class="title">
+      {{ series.title }}
+      <span class="count">{{ postIndex | strip }}/{{ seriesCount }}</span>
+    </span>
+    <button
+      class="btn btn-outline-secondary folded"
+      onclick="toggleFold()"
+    >
+      <i class="fas fa-chevron-down"></i>
+    </button>
+    <button
+      class="btn btn-outline-secondary unfolded"
+      onclick="toggleFold()"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
   </div>
 
   <!--  -->
-  <ol>
+  <ol class="item-wrapper">
     {% for post in reversePosts %} {% if post.seriesId == series.id %}
     <li class="post-title">
+      {% if post != page %}
       <a class="text" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-        {{ post.title }}
+        {{ post.title }} - {{ post.subtitle }}
       </a>
+      {% else %}
+      <span class="current">
+        {{ post.title }} - {{ post.subtitle }}
+      </span>
+      <!-- <span class="current-label"> - (현재)</span> -->
+      {% endif %}
     </li>
     {% endif %} {% endfor %} {% endif %} {% endfor %}
   </ol>
+
 </div>
 {% endif %}
+
+<script>
+  const btnFolded = document.querySelector('.btn.folded')
+  const btnUnfolded = document.querySelector('.btn.unfolded')
+  btnFolded.classList.add('hidden')
+  btnUnfolded.classList.remove('hidden')  
+
+  function toggleFold () {
+    const btnFolded = document.querySelector('.btn.folded')
+    const btnUnfolded = document.querySelector('.btn.unfolded')
+    const titleWrapper = document.querySelector('.title-wrapper')
+    const itemWrapper = document.querySelector('.item-wrapper')
+    btnFolded.classList.toggle('hidden')
+    btnUnfolded.classList.toggle('hidden')
+    titleWrapper.classList.toggle('folded')
+    itemWrapper.classList.toggle('folded')
+  }
+</script>

@@ -1,0 +1,5 @@
+{% for series in site.data.series %}
+	{% if series.id == include.seriesId %}
+	<div class="series-label" title="{{ series.title }}">SERIES</div>
+	{% endif %}
+{% endfor %}
