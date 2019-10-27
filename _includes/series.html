@@ -1,0 +1,10 @@
+{% if page.seriesId %}
+<div class="series wrapper">
+  {% for series in site.data.series %} {% if series.id == page.seriesId %}
+  <div class="series title">{{ series.title }} 시리즈</div>
+
+  {% for post in site.posts %}
+  <div class="series post-title">{{ post.title }}</div>
+  {% endfor%} {% endif %} {% endfor%}
+</div>
+{% endif %}

@@ -39,9 +39,7 @@ layout: default
   <div class="container post">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        {% if post.categories %}
-          <div class="series"></div>
-        {% endif %}
+        {% include series.html %}
 
         {{ content }}
         <div class="post-bottom-margin"></div>
