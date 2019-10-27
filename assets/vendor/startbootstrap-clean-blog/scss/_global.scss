@@ -23,6 +23,17 @@ a {
   @include transition-all;
   &:focus,
   &:hover {
+    text-decoration: underline;
+    color: $cyan;
+  }
+}
+a.text {
+  color: $text;
+  text-decoration: none;
+  @include transition-all;
+  &:focus,
+  &:hover {
+    text-decoration: underline;
     color: $cyan;
   }
 }

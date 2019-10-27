@@ -1,10 +1,35 @@
 {% if page.seriesId %}
 <div class="series wrapper">
-  {% for series in site.data.series %} {% if series.id == page.seriesId %}
-  <div class="series title">{{ series.title }} 시리즈</div>
+  {% for series in site.data.series %} {% if series.id == page.seriesId %} {%
+  assign reversePosts = site.posts | reverse %}
+  <!--  -->
+  {% assign seriesCount = 0 %}
+  {% for post in reversePosts %}
+    {% if series.id == post.seriesId %}
+      {% assign seriesCount = seriesCount | plus: 1 %}
+      {% if post == page %}
+        {% capture postIndex %}
+          {{ seriesCount }}
+        {% endcapture %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
 
-  {% for post in site.posts %}
-  <div class="series post-title">{{ post.title }}</div>
-  {% endfor%} {% endif %} {% endfor%}
+  <div class="title-wrapper">
+    <span class="series-label">SERIES</span> 
+    <span class="series-title">{{ series.title }}</span>
+    <span class="series-count">{{ postIndex | strip }}/{{ seriesCount }}</span>
+  </div>
+
+  <!--  -->
+  <ol>
+    {% for post in reversePosts %} {% if post.seriesId == series.id %}
+    <li class="post-title">
+      <a class="text" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+        {{ post.title }}
+      </a>
+    </li>
+    {% endif %} {% endfor %} {% endif %} {% endfor %}
+  </ol>
 </div>
 {% endif %}

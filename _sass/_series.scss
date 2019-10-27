@@ -1,3 +1,30 @@
 .series.wrapper {
-	background-color: red;
+  background-color: #21252922;
+  padding: 8px;
+  font-size: 1rem;
+
+  .title-wrapper {
+		display: flex;
+		align-items: center;
+		margin-bottom: 8px;
+		
+    .series-label {
+      color: $success;
+      font-style: italic;
+			font-size: 0.8rem;
+			margin-right: 8px;
+		}
+		
+		.series-title {
+			flex-grow: 1;
+			font-size: 1.2rem;
+			font-weight: 500;
+		}
+
+		.series-count {
+			color: $secondary;
+			font-size: 0.8rem;
+			margin: 0px 8px;
+		}
+  }
 }
