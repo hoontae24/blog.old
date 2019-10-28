@@ -2,7 +2,7 @@
 <div class="series wrapper">
   {% for series in site.data.series %} {% if series.id == page.seriesId %} {%
   assign reversePosts = site.posts | reverse %}
-  <!--  -->
+
   {% assign seriesCount = 0 %}
   {% for post in reversePosts %}
     {% if series.id == post.seriesId %}
@@ -41,11 +41,11 @@
     <li class="post-title">
       {% if post != page %}
       <a class="text" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-        {{ post.title }} - {{ post.subtitle }}
+        {{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}
       </a>
       {% else %}
       <span class="current">
-        {{ post.title }} - {{ post.subtitle }}
+        {{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}
       </span>
       <!-- <span class="current-label"> - (현재)</span> -->
       {% endif %}

@@ -33,6 +33,10 @@ layout: default
         {% for post in site.posts limit : 5 %}
 
         <article class="post-preview">
+          13
+          {% if post.seriesId %}
+            {% include series-label.html seriesId=post.seriesId %}
+          {% endif %}
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             <h4 class="post-title">{{ post.title }}</h4>
             {% if post.subtitle %}
