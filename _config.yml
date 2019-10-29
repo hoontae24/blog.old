@@ -1,0 +1,32 @@
+title: 코드쌓기
+email: kadr8941@gmail.com
+description: STACK CODE
+author: hoontae
+baseurl: ''
+url: 'https://hoontae24.github.io'
+
+# Social Profiles
+github_username: hoontae24
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics: UA-XXXXXXXXX-X # out your google-analytics code
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+
+google_fonts: 'Noto+sans+KR:100,200,300,400,500,600,700'
+
+pagination:
+  enabled: true
+  per_page: 5
+  sort_reverse: true
+  title: ':title'
+  permalink: '/page:num'
+  trail:
+    before: 2
+    after: 2

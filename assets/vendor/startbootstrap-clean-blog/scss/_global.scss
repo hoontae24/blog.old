@@ -1,0 +1,82 @@
+// Global styling for this template
+
+body {
+  font-size: 20px;
+  color: $gray-900;
+  @include sans-serif-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: 'Noto sans KR', sans-serif;
+  // @include sans-serif-font;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  @include transition-all;
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+    color: $cyan;
+  }
+}
+a.text {
+  color: $text;
+  text-decoration: none;
+  @include transition-all;
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+    color: $cyan;
+  }
+}
+
+.section-heading {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 60px;
+}
+
+.caption {
+  font-size: 14px;
+  font-style: italic;
+  display: block;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+::-moz-selection {
+  color: $white;
+  background: $primary;
+  text-shadow: none;
+}
+
+::selection {
+  color: $white;
+  background: $primary;
+  text-shadow: none;
+}
+
+img::selection {
+  color: $white;
+  background: transparent;
+}
+
+img::-moz-selection {
+  color: $white;
+  background: transparent;
+}
+
+div.post-bottom-margin {
+  margin-bottom: 50px;
+}
