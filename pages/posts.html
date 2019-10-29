@@ -11,6 +11,7 @@ pagination:
 
 <article class="post-preview">
   <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+    {% include series-label.html seriesId=post.seriesId %}
     <h4 class="post-title">{{ post.title }}</h4>
     {% if post.subtitle %}
     <h6 class="post-subtitle">{{ post.subtitle }}</h6>
