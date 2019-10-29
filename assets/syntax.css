@@ -1,6 +1,3 @@
-.highlight, .highlight * {
-  font-family: "Hack", "Noto sans KR", sans-serif;
-}
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .cm {
@@ -209,7 +206,4 @@
 }
 .highlight {
   background-color: #f8f8f8;
-}
-div.highlight {
-  padding: 8px;
 }
