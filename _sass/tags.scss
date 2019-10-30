@@ -1,0 +1,20 @@
+.tag.label {
+  color: rgb(69, 116, 204);
+  background-color: $gray-200;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin: 4px;
+  padding: 2px 4px;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  a {
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: rgb(86, 126, 202);
+    background-color: $gray-300;
+  }
+}
