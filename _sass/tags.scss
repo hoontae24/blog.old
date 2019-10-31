@@ -1,5 +1,5 @@
-.tag.label {
-  color: rgb(69, 116, 204);
+span.tag.label {
+  color: $primary;
   background-color: $gray-200;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -9,12 +9,13 @@
   cursor: pointer;
   border-radius: 4px;
   overflow: hidden;
-  a {
-    text-decoration: none;
-  }
+  text-decoration: none;
+  @include transition-all;
 
+  &:focus,
   &:hover {
-    color: rgb(86, 126, 202);
+    color: $primary-light;
     background-color: $gray-300;
+    text-decoration: none;
   }
 }

@@ -1,31 +1,29 @@
 // Styling for the post page
-.divider {
-  margin: 8px 0px 16px 0px;
-}
-
 .post-preview {
-  padding: 10px 0px 0px;
+  border: 1px solid $gray-300;
+  padding: 16px;
+  margin-bottom: 24px;
+  transition: box-shadow 0.3s ease-in-out;
+  color: $gray-900;
 
-  > a {
-    color: $gray-900;
-    &:focus,
-    &:hover {
-      text-decoration: none;
-      color: $primary;
-    }
-    > .post-title {
-      // font-size: 30px;
-      // margin-top: 5px;
-      margin-bottom: 10px;
-    }
-    > .post-subtitle {
-      font-weight: 500;
-      margin: 0 0 10px;
-    }
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    border: 1px solid $gray-400;
+    color: $primary;
+  }
+  > .post-title {
+    margin-bottom: 10px;
+  }
+  > .post-subtitle {
+    font-weight: 500;
+    margin: 0 0 10px;
   }
   > .post-footer {
+    margin-top: 16px;
     display: flex;
     justify-content: space-between;
+
     > .post-meta {
       font-size: 16px;
       font-style: italic;
@@ -39,6 +37,9 @@
           color: $primary;
         }
       }
+    }
+
+    > .post-tags {
     }
   }
 
