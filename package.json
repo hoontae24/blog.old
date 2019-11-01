@@ -5,7 +5,7 @@
   "description": "A developer's blog",
   "scripts": {
     "dev": "bundle exec jekyll serve",
-    "build": "rake publish"
+    "publish": "rake publish"
   },
   "keywords": [
     "blog",
