@@ -7,7 +7,13 @@ pagination:
   enabled: true
 ---
 
-{% for post in paginator.posts %} 
-{% include post-card.html post=post %} 
-{% endfor %}
-{% include pagination.html %}
+<div class="page-wrapper page-posts">
+  <div class="section left">left</div>
+  <div class="section posts">
+    {% for post in paginator.posts %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+    {% include pagination.html %}
+  </div>
+  <div class="section right">right</div>
+</div>

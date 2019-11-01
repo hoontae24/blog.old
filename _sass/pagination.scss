@@ -1,0 +1,16 @@
+.pagination {
+	margin: auto;
+	text-align: center;
+	display: block;
+	font-size: 1.1rem;
+	font-weight: bold;
+	padding: 55px 0 25px 0;
+	color: #999;
+}
+.pagination-link {
+	margin: 0px 16px;
+}
+span.pagination-selected {
+	display: inline-block;
+	font-size: 1.3rem;
+}

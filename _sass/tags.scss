@@ -3,7 +3,6 @@ span.tag.label {
   background-color: $gray-200;
   font-size: 0.8rem;
   text-transform: uppercase;
-  margin: 4px;
   padding: 2px 4px;
   font-family: 'Lato', sans-serif;
   cursor: pointer;
@@ -18,4 +17,7 @@ span.tag.label {
     background-color: $gray-300;
     text-decoration: none;
   }
+}
+span.tag.label:not(:last-child) {
+  margin-right: 8px;
 }

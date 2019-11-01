@@ -3,6 +3,7 @@
 body {
   font-size: 20px;
   color: $gray-900;
+  // background-color: $gray-100;
   @include sans-serif-font;
 }
 
@@ -15,27 +16,6 @@ h6 {
   font-weight: 700;
   font-family: 'Noto sans KR', sans-serif;
   // @include sans-serif-font;
-}
-
-a {
-  color: $primary;
-  text-decoration: none;
-  @include transition-all;
-  &:focus,
-  &:hover {
-    text-decoration: underline;
-    color: $cyan;
-  }
-}
-a.text {
-  color: $text;
-  text-decoration: none;
-  @include transition-all;
-  &:focus,
-  &:hover {
-    text-decoration: underline;
-    color: $cyan;
-  }
 }
 
 .section-heading {

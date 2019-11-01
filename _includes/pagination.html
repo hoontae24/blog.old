@@ -1,5 +1,5 @@
 <!-- pagination -->
-{% if paginator.total_pages > 1 %}
+{% if paginator.total_pages > 0 %}
   <div class='pagination'>
     {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="pagination-link">
@@ -27,24 +27,4 @@
       <span class="pagination-link">Next &raquo;</span>
     {% endif %}
   </div>
-  {% endif %}
-</div>
-
-<style lang="scss">
-  .pagination {
-    margin: auto;
-    text-align: center;
-    display: block;
-    font-size: 1.1rem;
-    font-weight: bold;
-    padding: 55px 0 25px 0;
-    color: #999;
-	}
-	.pagination-link {
-		margin: 0px 16px;
-	}
-  span.pagination-selected {
-    display: inline-block;
-    font-size: 1.3rem;
-  }
-</style>
+{% endif %}

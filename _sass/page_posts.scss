@@ -1,0 +1,19 @@
+.page-wrapper.page-posts {
+  display: flex;
+  flex-wrap: nowrap;
+
+  > .section {
+    margin: 8px;
+  }
+  > .section:not(.posts) {
+		min-width: 150px;
+		border: 1px solid lightsteelblue;
+  }
+  > .posts {
+    flex-grow: 1;
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}

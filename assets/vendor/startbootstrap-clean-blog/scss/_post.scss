@@ -5,6 +5,7 @@
   margin-bottom: 24px;
   transition: box-shadow 0.3s ease-in-out;
   color: $gray-900;
+  background-color: white;
 
   &:focus,
   &:hover {
@@ -40,13 +41,22 @@
     }
 
     > .post-tags {
+      display: flex;
+      align-items: center;
     }
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (max-width: 768px) {
     > a {
       > .post-title {
         // font-size: 36px;
+      }
+    }
+    > .post-footer {
+      flex-direction: column;
+
+      > .post-meta {
+        margin-bottom: 8px;
       }
     }
   }
@@ -59,21 +69,48 @@
     border: none;
   }
 
+  ul {
+    font-size: 1.05rem;
+    font-weight: 400;
+  }
+
+  a {
+    color: $primary;
+    text-decoration: none;
+    @include transition-all;
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+      color: $cyan;
+    }
+  }
+  a.text {
+    color: $text;
+    text-decoration: none;
+    @include transition-all;
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+      color: $cyan;
+    }
+  }
+
   p {
     font-size: 1.05rem;
     font-weight: 400;
     color: $text;
     line-height: 1.5;
-    margin: 30px 0;
-    a {
-      // text-decoration: underline;
-    }
+    margin: 20px 0;
+
     strong {
       color: #252c35;
       font-size: 1.1rem;
     }
     img {
-      width: 100%;
+      max-width: 95%;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+      box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5);
     }
 
     .text-center {
@@ -82,11 +119,22 @@
     }
   }
 
-  blockquote * {
+  blockquote {
     font-style: italic;
     color: $gray-600;
+    margin-top: 1px;
+    margin-bottom: 1px;
     margin-left: 16px;
     padding-left: 16px;
     border-left: 3px solid rgba(135, 206, 250, 0.7);
+  }
+
+  code {
+    font-size: 0.9rem;
+    font-family: 'Hack', sans-serif;
+    font-weight: 400;
+  }
+  pre {
+    padding: 8px 16px;
   }
 }
