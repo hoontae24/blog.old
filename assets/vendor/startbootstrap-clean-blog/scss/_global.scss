@@ -1,9 +1,9 @@
 // Global styling for this template
 
 body {
-  font-size: 20px;
+  font-size: 14px;
   color: $gray-900;
-  // background-color: $gray-100;
+  background-color: $gray-100;
   @include sans-serif-font;
 }
 
@@ -13,11 +13,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-weight: 600;
   font-family: 'Noto sans KR', sans-serif;
   // @include sans-serif-font;
 }
-
+h5 {
+  font-weight: 500;
+}
+h6 {
+  font-weight: 400;
+}
 .section-heading {
   font-size: 36px;
   font-weight: 700;
@@ -33,6 +38,14 @@ h6 {
   text-align: center;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.page-wrapper {
+  padding-top: 20px;
+  @media only screen and (max-width: 767px) {
+    padding-top: 8px;
+    flex-direction: column;
+  }
 }
 
 ::-moz-selection {

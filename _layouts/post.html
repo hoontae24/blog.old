@@ -42,8 +42,11 @@ layout: default
         {% include series.html %}
 
         {{ content }}
+        {% for tag in page.tags %} {% include tag-chip.html text=tag %} {%
+        endfor %}
         <div class="post-bottom-margin"></div>
-        <div class="clearfix">
+
+        <!-- <div class="clearfix">
           {% if page.previous.url %}
           <a
             class="btn btn-primary float-left"
@@ -63,7 +66,7 @@ layout: default
             >Next<span class="d-none d-md-inline"> Post</span> &rarr;</a
           >
           {% endif %}
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

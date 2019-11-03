@@ -1,4 +1,16 @@
-{% assign tag = include.text %}
-<span class="tag label btn-route" path="/tags/{{ tag }}">
-  {{ tag }}
+{% capture item %} 
+  {% if include.text %}
+    {{ include.text | strip }}
+  {% endif %}
+  {% if include.tag %}
+    {{ include.tag | first | strip }}
+  {% endif %} 
+{% endcapture %}
+
+<span 
+  class="tag label btn-route"
+  path="/tags/#{{ item | strip }}"
+  title="{% if item.size > 30 %}{{ item | strip }}{% endif %}"
+>
+  {{ item | strip }}
 </span>

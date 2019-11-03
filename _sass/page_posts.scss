@@ -1,19 +1,26 @@
-.page-wrapper.page-posts {
+.page-posts {
   display: flex;
   flex-wrap: nowrap;
-
-  > .section {
+  
+  .section {
     margin: 8px;
+    @media only screen and (max-width: 767px) {
+      margin: 0px;
+    }
   }
-  > .section:not(.posts) {
-		min-width: 150px;
-		border: 1px solid lightsteelblue;
-  }
-  > .posts {
+  .posts {
     flex-grow: 1;
   }
 
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
+  .right {
+    width: 220px;
+    min-height: 300px;
+    border: 1px solid $gray-300;
+    background-color: white;
+    padding: 16px;
+    align-self: flex-start;
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
   }
 }
