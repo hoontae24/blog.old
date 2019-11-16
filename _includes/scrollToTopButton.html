@@ -1,0 +1,41 @@
+<div class="scrollToTopButton" onclick="_toTop()">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+  const _toTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+  onMount(() => {
+    const btn = document.querySelector('div.scrollToTopButton')
+    const showBtn = () => {
+      window.scrollY > 100
+        ? !btn.classList.contains('show') && btn.classList.add('show')
+        : btn.classList.contains('show') && btn.classList.remove('show')
+    }
+    showBtn()
+    window.addEventListener('scroll', showBtn)
+  })
+</script>
+
+<style>
+  .scrollToTopButton {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    right: 40px;
+    bottom: 40px;
+
+    cursor: pointer;
+    border: 1px solid #000000a2;
+    color: #000000a2;
+    background-color: #ffffff99;
+    border-radius: 50%;
+    overflow: hidden;
+    visibility: hidden;
+  }
+  .scrollToTopButton.show {
+    visibility: visible;
+  }
+</style>

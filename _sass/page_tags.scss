@@ -1,0 +1,91 @@
+.page-tags {
+  .summary {
+    padding: 16px;
+    margin-bottom: 16px;
+    h5 {
+      margin-left: 8px;
+      margin-bottom: 16px;
+    }
+
+    .item {
+      display: inline-block;
+      margin-right: 8px;
+    }
+  }
+
+  .details {
+    position: relative;
+    padding: 0px 0px 16px 0px;
+    margin-bottom: 16px;
+    .actions {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+
+    .item.highlighting {
+      border-color: $primary-hazy;
+    }
+    .item {
+      box-sizing: border-box;
+      border-left: 12px solid;
+      transition: border-color 0.5s ease-out;
+      border-color: transparent;
+      padding-top: 16px;
+      padding-left: 4px;
+      padding-right: 16px;
+
+      h6 {
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-bottom: 0;
+        .target {
+          padding-top: 250px;
+          margin-top: -250px;
+          scroll-behavior: smooth;
+        }
+      }
+
+      .tag-post-list {
+        overflow: hidden;
+        transition: max-height 0.3s;
+        max-height: 400px;
+        :first-child {
+          padding-top: 8px;
+        }
+      }
+      .tag-post-list.collapsed {
+        padding-top: 0px;
+        transition: max-height 0.3s;
+        max-height: 0;
+      }
+      .post {
+        margin-left: 8px;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        span.i {
+          padding: 0;
+          width: 5px;
+          height: 5px;
+					background-color: $gray-600;
+					border-radius: 50%;
+          overflow: hidden;
+        }
+        &:hover {
+          color: $primary;
+        }
+        .title {
+          font-size: 15px;
+        }
+        .subtitle {
+          font-size: 13px;
+        }
+      }
+      hr {
+        margin: 0px;
+        margin-top: 16px;
+      }
+    }
+  }
+}

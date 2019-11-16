@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Posts
+title: POSTS
 background: '/img/bg-post.jpg'
 permalink: /posts
 pagination:
@@ -16,7 +16,8 @@ pagination:
   </div>
   <div class="section right shadow-sm">
     <h6>TAGS</h6>
-    {% for tag in site.tags %}
+    {% assign _tags = site.tags | sort %}
+    {% for tag in _tags %}
     {% include tag-chip.html tag=tag %}
     {% endfor %}
     <hr />

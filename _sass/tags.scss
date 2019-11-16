@@ -1,5 +1,5 @@
-span.tag.label {
-  display: inline-block;
+span.tag {
+  display: inline-flex;
   color: $primary;
   background-color: $gray-100;
   border: 1px solid $gray-200;
@@ -9,9 +9,7 @@ span.tag.label {
   text-decoration: none;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  overflow: hidden;
-  max-width: 100%;
-  padding: 2px 4px;
+  max-width: 200px;
   cursor: pointer;
   // @include transition-all;
 
@@ -20,8 +18,31 @@ span.tag.label {
     color: $gray-100;
     background-color: $primary;
     text-decoration: none;
+    .count {
+      color: inherit;
+      background-color: #ffab10;
+    }
+  }
+
+  .label {
+    display: inline-block;
+    flex-grow: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 3px 6px;
+  }
+  .label.with-count {
+    padding-right: 3px;
+  }
+
+  .count {
+    display: inline-block;
+    padding: 3px 6px;
+    color: $gray-800;
+    background-color: #fdd385;
   }
 }
-span.tag.label:not(:last-child) {
+span.tag:not(:last-child) {
   margin-right: 4px;
+  margin-bottom: 4px;
 }

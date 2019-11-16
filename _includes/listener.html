@@ -1,0 +1,7 @@
+<script>
+  const listeners = []
+  const onMount = listener => listeners.push(listener)
+  window.addEventListener('load', () => {
+    listeners.forEach(listener => listener && listener())
+  })
+</script>

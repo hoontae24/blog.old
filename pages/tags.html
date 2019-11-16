@@ -1,0 +1,72 @@
+---
+layout: page
+title: TAGS
+# background: '/img/bg-post.jpg'
+permalink: /tags
+initListCollapse: false
+---
+{% assign _tags = site.tags | sort %}
+{% assign initListCollapse = page.initListCollapse %}
+<div class="page-wrapper page-tags">
+  <div class="summary shadow-sm">
+    <h5>TAGS</h5>
+    {% for tag in _tags %}
+    <div class="item">
+      {% include tag-chip.html tag=tag count=true %}
+    </div>
+    {% endfor %}
+  </div>
+  <div class="details shadow-sm">
+		<div class="actions">
+			<!-- <div class="btn-collapse">모두 접기</div> -->
+		</div>
+    {% for tag in _tags %}
+    <div class="item">
+      <h6 class="tag-list-title">
+				<span class="target" id="{{ tag | first | up }}"></span>
+				{{ tag | first | up }}
+      </h6>
+      <div class="tag-post-list {% if initListCollapse %}collapsed{% endif %}">
+        {% for post in tag.last %}
+        <div class="post btn-route" path="{{ post.url }}">
+					<span class="i"></span>&nbsp;
+          <span class="title">{{ post.title }}</span>
+          {% if post.subtitle %}
+          <span class="subtitle">&nbsp;-&nbsp;{{ post.subtitle }}</span>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      <hr />
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  onMount(() => {
+    const tagTitles = document.querySelectorAll('.tag-list-title')
+    tagTitles.forEach(tagTitle => {
+      const tagItem = tagTitle.parentElement
+      const list = tagItem.querySelector('.tag-post-list')
+      tagTitle.addEventListener('click', e => {
+        list.classList.toggle('collapsed')
+      })
+    })
+
+    const focusOnTag = () => {
+			const hash = window.location.hash
+			if (!hash) return
+			const target = document.querySelector(hash)
+      const tagTitle = target.parentElement
+      const tagItem = tagTitle.parentElement
+      const list = tagItem.querySelector('.tag-post-list')
+			tagTitle.classList.remove('collapsed')
+			
+      tagItem.classList.add('highlighting')
+      setTimeout(() => tagItem.classList.remove('highlighting'), 500)
+    }
+    focusOnTag()
+    window.addEventListener('popstate', focusOnTag)
+  })
+</script>

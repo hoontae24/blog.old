@@ -7,10 +7,22 @@
   {% endif %} 
 {% endcapture %}
 
+{% assign _tag = item | strip %}
+{% for currentTag in site.tags %}
+  {% if currentTag.first == _tag %}
+    {% assign count = currentTag | last | size %}
+  {% endif %}
+{% endfor %}
+
 <span 
-  class="tag label btn-route"
+  class="tag btn-route"
   path="/tags/#{{ item | strip }}"
   title="{% if item.size > 30 %}{{ item | strip }}{% endif %}"
 >
-  {{ item | strip }}
+  <span class="label {% if include.count == true %}{{'with-count'}}{% endif %}">
+      {{ item | strip }}
+  </span>
+  {% if include.count == true %}
+  <span class="count">{{ count }}</span>
+  {% endif %}
 </span>
