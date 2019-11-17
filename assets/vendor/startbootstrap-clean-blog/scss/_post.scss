@@ -47,10 +47,12 @@
   .post-footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     > .post-meta {
-      font-size: 12px;
-      font-style: italic;
+      font-size: 14px;
+      font-weight: 300;
+      // font-style: italic;
       margin: 0;
       color: $gray-600;
     }
@@ -62,6 +64,7 @@
   }
 
   @media only screen and (max-width: 767px) {
+    padding: 8px;
     margin-bottom: 8px;
     .thumbnail {
       margin-right: 8px;
@@ -69,14 +72,15 @@
       min-width: 100px;
     }
     .post-title {
-      font-size: 16px;
+      font-size: 14px;
     }
     .post-subtitle {
-      font-size: 10px;
+      font-size: 12px;
     }
 
     .post-footer {
       flex-direction: column;
+      align-items: flex-start;
 
       .post-meta {
         font-size: 12px;
@@ -95,6 +99,9 @@
     padding-top: 20px;
     @media only screen and (max-width: 767px) {
       padding-top: 8px;
+      .wrapper {
+        padding: 0px 8px;
+      }
     }
   }
   hr {
@@ -145,6 +152,11 @@
       margin-left: 2.5%;
       margin-right: 2.5%;
       box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5);
+      @media only screen and (max-width: 767px) {
+        max-width: 97%;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+      }
     }
 
     .text-center {
@@ -170,5 +182,8 @@
   }
   pre {
     padding: 8px 16px;
+    @media only screen and (max-width: 767px) {
+      padding: 8px;
+    }
   }
 }

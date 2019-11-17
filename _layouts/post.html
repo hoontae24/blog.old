@@ -21,13 +21,14 @@ layout: default
             <h2 class="subheading">{{ page.subtitle }}</h2>
             {% endif %}
             <span class="meta">
-              >Posted by
+              <!-- >Posted by
               <a href="/about"
                 >{% if page.author %}{{ page.author }}{% else %}{{
                   site.author
                 }}{% endif %}</a
               >
-              on {{ page.date | date: '%B %d, %Y' }} &middot; {% include
+              on  -->
+              {{ page.date | date: '%Y. %m. %d' }} &middot; {% include
               read_time.html content=page.content %}
             </span>
           </div>
@@ -38,10 +39,9 @@ layout: default
 
   <div class="container post">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        {% include series.html %}
-
-        {{ content }}
+      <div class="col-lg-8 col-md-10 mx-auto wrapper">
+        {% include series.html %} {{ content }}
+        <div class="post-bottom-margin"></div>
         {% for tag in page.tags %} {% include tag-chip.html text=tag %} {%
         endfor %}
         <div class="post-bottom-margin"></div>

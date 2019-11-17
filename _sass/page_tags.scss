@@ -1,7 +1,7 @@
 .page-tags {
   .summary {
     padding: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
     h5 {
       margin-left: 8px;
       margin-bottom: 16px;
@@ -21,6 +21,15 @@
       position: absolute;
       top: 16px;
       right: 16px;
+      z-index: 1;
+      > * {
+        border: 1px solid $gray-300;
+        border-radius: 4px;
+        padding: 4px;
+        user-select: none;
+        cursor: pointer;
+        color: $gray-800;
+      }
     }
 
     .item.highlighting {
@@ -29,35 +38,52 @@
     .item {
       box-sizing: border-box;
       border-left: 12px solid;
-      transition: border-color 0.5s ease-out;
+      transition: border-color 0.8s ease-out;
       border-color: transparent;
-      padding-top: 16px;
+      padding-top: 24px;
       padding-left: 4px;
       padding-right: 16px;
 
-      h6 {
+      .tag-list-title {
+        position: relative;
         text-transform: uppercase;
         cursor: pointer;
-        margin-bottom: 0;
+        margin-bottom: 4px;
+        width: fit-content;
         .target {
-          padding-top: 250px;
-          margin-top: -250px;
+          position: absolute;
+          top: -250px;
           scroll-behavior: smooth;
+        }
+        .collapse-icon {
+          transition: transform 0.3s;
+          transform: rotate(-90deg);
+        }
+
+        &.collapsed {
+          .collapse-icon {
+            transition: transform 0.3s;
+            transform: rotate(-180deg);
+          }
         }
       }
 
       .tag-post-list {
         overflow: hidden;
-        transition: max-height 0.3s;
-        max-height: 400px;
-        :first-child {
-          padding-top: 8px;
+        transition: height 0.3s;
+
+        .list-wrapper {
+          padding: 8px;
+          @media only screen and (max-width: 767px) {
+            padding: 0px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+          }
         }
       }
       .tag-post-list.collapsed {
         padding-top: 0px;
-        transition: max-height 0.3s;
-        max-height: 0;
+        transition: height 0.3s;
       }
       .post {
         margin-left: 8px;
@@ -68,8 +94,8 @@
           padding: 0;
           width: 5px;
           height: 5px;
-					background-color: $gray-600;
-					border-radius: 50%;
+          background-color: $gray-600;
+          border-radius: 50%;
           overflow: hidden;
         }
         &:hover {
@@ -84,7 +110,7 @@
       }
       hr {
         margin: 0px;
-        margin-top: 16px;
+        margin-top: 12px;
       }
     }
   }

@@ -1,15 +1,21 @@
 .series-label {
   color: $success;
   font-style: italic;
-  font-size: 0.8rem;
+  font-size: 13px;
   margin-right: 8px;
+  @media only screen and (max-width: 767px) {
+    font-size: 10px;
+  }
 }
 
 .series.wrapper {
   border: 1.5px solid $secondary;
   padding: 8px;
   margin-bottom: 24px;
-  font-size: 1rem;
+  font-size: 16px;
+  @media only screen and (max-width: 767px) {
+    font-size: 14px;
+  }
 
   .title-wrapper {
     display: flex;
@@ -19,14 +25,20 @@
 
     .title {
       flex-grow: 1;
-      font-size: 1.2rem;
+      font-size: 18px;
       font-weight: 500;
+      @media only screen and (max-width: 767px) {
+        font-size: 14px;
+      }
     }
 
     .count {
       color: $secondary;
-      font-size: 0.8rem;
+      font-size: 14px;
       margin: 0px 8px;
+      @media only screen and (max-width: 767px) {
+        font-size: 10px;
+      }
     }
   }
   .title-wrapper.folded {
@@ -35,17 +47,16 @@
   }
 
   .item-wrapper {
-    max-height: 1000px;
+    max-height: 400px;
     transition: all 0.26s ease;
-
+    overflow: auto;
+    padding-left: 30px;
+    @media only screen and (max-width: 767px) {
+      padding-left: 20px;
+    }
     .current {
       color: $black;
       font-weight: 500;
-    }
-    .current-label {
-      color: $dark;
-      font-weight: 300;
-      font-size: 0.8rem;
     }
   }
   .item-wrapper.folded {

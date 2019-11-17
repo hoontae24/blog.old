@@ -1,10 +1,13 @@
 // Global styling for this template
-
+html,
 body {
-  font-size: 14px;
+  font-size: 16px;
   color: $gray-900;
   // background-color: $gray-100;
   @include sans-serif-font;
+  @media only screen and (max-width: 767px) {
+    font-size: 13px;
+  }
 }
 
 h1,
@@ -16,12 +19,21 @@ h6 {
   font-weight: 600;
   font-family: 'Noto sans KR', sans-serif;
   // @include sans-serif-font;
+  @media only screen and (max-width: 767px) {
+    font-weight: 500;
+  }
 }
 h5 {
   font-weight: 500;
+  @media only screen and (max-width: 767px) {
+    font-weight: 400;
+  }
 }
 h6 {
   font-weight: 400;
+  @media only screen and (max-width: 767px) {
+    font-weight: 300;
+  }
 }
 .section-heading {
   font-size: 36px;

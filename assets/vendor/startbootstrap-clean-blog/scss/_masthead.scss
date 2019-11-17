@@ -5,7 +5,7 @@ header.masthead {
   background-attachment: scroll;
   position: relative;
   @include background-cover;
-  
+
   .overlay {
     position: absolute;
     top: 0;
@@ -22,7 +22,7 @@ header.masthead {
     color: $white;
     position: relative;
     @media only screen and (max-width: 767px) {
-      padding: 100px 0 40px 0;
+      padding: 190px 0 50px 0;
     }
   }
   .page-heading,
@@ -74,10 +74,14 @@ header.masthead {
     }
     @media only screen and (max-width: 767px) {
       h1 {
-        font-size: 44px;
+        font-size: 20px;
       }
       .subheading {
-        font-size: 24px;
+        font-size: 16px;
+      }
+      .meta {
+      bottom: 8px;
+      font-size: 14px;
       }
     }
   }

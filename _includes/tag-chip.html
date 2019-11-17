@@ -15,11 +15,11 @@
 {% endfor %}
 
 <span 
-  class="tag btn-route"
+  class="tag tag-chip btn-route"
   path="/tags/#{{ item | strip }}"
   title="{% if item.size > 30 %}{{ item | strip }}{% endif %}"
 >
-  <span class="label {% if include.count == true %}{{'with-count'}}{% endif %}">
+  <span class="label">
       {{ item | strip }}
   </span>
   {% if include.count == true %}

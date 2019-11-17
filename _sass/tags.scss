@@ -1,10 +1,10 @@
-span.tag {
+span.tag.tag-chip {
   display: inline-flex;
   color: $primary;
   background-color: $gray-100;
   border: 1px solid $gray-200;
   border-radius: 3px;
-  font-size: 0.8rem;
+  font-size: 14px;
   font-family: 'Lato', sans-serif;
   text-decoration: none;
   text-overflow: ellipsis;
@@ -31,9 +31,6 @@ span.tag {
     overflow: hidden;
     padding: 3px 6px;
   }
-  .label.with-count {
-    padding-right: 3px;
-  }
 
   .count {
     display: inline-block;
@@ -42,7 +39,7 @@ span.tag {
     background-color: #fdd385;
   }
 }
-span.tag:not(:last-child) {
+span.tag.tag-chip {
   margin-right: 4px;
   margin-bottom: 4px;
 }

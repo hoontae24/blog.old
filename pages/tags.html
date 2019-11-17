@@ -3,13 +3,17 @@ layout: page
 title: TAGS
 # background: '/img/bg-post.jpg'
 permalink: /tags
-initListCollapse: false
+initListCollapse: true
 ---
-{% assign _tags = site.tags | sort %}
-{% assign initListCollapse = page.initListCollapse %}
+
+{% assign _tags = site.tags | sort %} {% assign initListCollapse =
+page.initListCollapse %}
 <div class="page-wrapper page-tags">
   <div class="summary shadow-sm">
-    <h5>TAGS</h5>
+    <h5>
+      TAGS
+      <i class="fas fa-tag icon"></i>&nbsp;
+    </h5>
     {% for tag in _tags %}
     <div class="item">
       {% include tag-chip.html tag=tag count=true %}
@@ -17,25 +21,37 @@ initListCollapse: false
     {% endfor %}
   </div>
   <div class="details shadow-sm">
-		<div class="actions">
-			<!-- <div class="btn-collapse">모두 접기</div> -->
-		</div>
+    <div class="actions">
+      <div class="btn-collapse" onclick="collapseAll(event)">모두 접기</div>
+    </div>
     {% for tag in _tags %}
     <div class="item">
-      <h6 class="tag-list-title">
-				<span class="target" id="{{ tag | first | up }}"></span>
-				{{ tag | first | up }}
+      <h6 class="tag-list-title {% if initListCollapse %}collapsed{% endif %}">
+        <span class="target" id="{{ tag | first | up }}"></span>
+        <i class="fas fa-chevron-left collapse-icon"></i>
+        &nbsp;{{ tag | first | up }}&nbsp;
       </h6>
-      <div class="tag-post-list {% if initListCollapse %}collapsed{% endif %}">
-        {% for post in tag.last %}
-        <div class="post btn-route" path="{{ post.url }}">
+      <div
+        class="tag-post-list {% if initListCollapse %}collapsed{% endif %}"
+        {%
+        if
+        initListCollapse
+        %}style="height: 0px;"
+        {%
+        endif
+        %}
+      >
+        <div class="list-wrapper">
+          {% for post in tag.last %}
+          <!-- <div class="post btn-route" path="{{ post.url }}">
 					<span class="i"></span>&nbsp;
           <span class="title">{{ post.title }}</span>
           {% if post.subtitle %}
           <span class="subtitle">&nbsp;-&nbsp;{{ post.subtitle }}</span>
           {% endif %}
+        </div> -->
+          {% include post-card.html post=post %} {% endfor %}
         </div>
-        {% endfor %}
       </div>
       <hr />
     </div>
@@ -44,27 +60,63 @@ initListCollapse: false
 </div>
 
 <script>
+  const collapseAll = e => {
+    e.stopPropagation()
+    const tagTitles = document.querySelectorAll('.tag-list-title')
+    tagTitles.forEach(tagTitle => {
+      const tagItem = tagTitle.parentElement
+      const list = tagItem.querySelector('.tag-post-list')
+      !tagTitle.classList.contains('collapsed') &&
+        tagTitle.classList.add('collapsed')
+      !list.classList.contains('collapsed') && list.classList.add('collapsed')
+      list.removeAttribute('style')
+      list.setAttribute('style', 'height: 0px')
+    })
+  }
   onMount(() => {
     const tagTitles = document.querySelectorAll('.tag-list-title')
     tagTitles.forEach(tagTitle => {
       const tagItem = tagTitle.parentElement
       const list = tagItem.querySelector('.tag-post-list')
+      if (list.classList.contains('collapsed')) {
+        list.removeAttribute('style')
+        list.setAttribute('style', 'height: 0px')
+      } else {
+        const height = list.querySelector('.list-wrapper').clientHeight
+        list.removeAttribute('style')
+        list.setAttribute('style', `height: ${height}px`)
+      }
       tagTitle.addEventListener('click', e => {
-        list.classList.toggle('collapsed')
+        tagTitle.classList.toggle('collapsed')
+        if (list.classList.toggle('collapsed')) {
+          list.removeAttribute('style')
+          list.setAttribute('style', 'height: 0px')
+        } else {
+          const height = list.querySelector('.list-wrapper').clientHeight
+          list.removeAttribute('style')
+          list.setAttribute('style', `height: ${height}px`)
+        }
       })
     })
 
+    let timeout = null
     const focusOnTag = () => {
-			const hash = window.location.hash
-			if (!hash) return
-			const target = document.querySelector(hash)
+      const hash = window.location.hash
+      if (!hash) return
+      const target = document.querySelector(hash)
       const tagTitle = target.parentElement
       const tagItem = tagTitle.parentElement
       const list = tagItem.querySelector('.tag-post-list')
-			tagTitle.classList.remove('collapsed')
-			
+      tagTitle.classList.remove('collapsed')
+      list.classList.remove('collapsed')
+      const height = list.querySelector('.list-wrapper').clientHeight
+      list.removeAttribute('style')
+      list.setAttribute('style', `height: ${height}px`)
+
+      tagTitle.scrollIntoView({ block: 'center' })
       tagItem.classList.add('highlighting')
-      setTimeout(() => tagItem.classList.remove('highlighting'), 500)
+      if (timeout) clearTimeout(timeout)
+      timeout = setTimeout(() => tagItem.classList.remove('highlighting'), 800)
     }
     focusOnTag()
     window.addEventListener('popstate', focusOnTag)

@@ -3,7 +3,14 @@
 </div>
 
 <script>
-  const _toTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+  const _toTop = () => {
+    const isHigh = window.scrollY > 2000
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: isHigh ? 'auto' : 'smooth',
+    })
+  }
   onMount(() => {
     const btn = document.querySelector('div.scrollToTopButton')
     const showBtn = () => {
@@ -37,5 +44,13 @@
   }
   .scrollToTopButton.show {
     visibility: visible;
+  }
+  @media only screen and (max-width: 767px) {
+    .scrollToTopButton {
+      width: 30px;
+      height: 30px;
+      right: 20px;
+      bottom: 20px;
+    }
   }
 </style>
