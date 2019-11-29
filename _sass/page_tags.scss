@@ -23,6 +23,7 @@
       right: 16px;
       z-index: 1;
       > * {
+        font-size: 13px;
         border: 1px solid $gray-300;
         border-radius: 4px;
         padding: 4px;
@@ -106,6 +107,10 @@
         }
         .subtitle {
           font-size: 13px;
+        }
+        .date {
+          font-size: 12px;
+          color: $secondary;
         }
       }
       hr {

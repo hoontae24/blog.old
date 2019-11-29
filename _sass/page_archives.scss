@@ -1,0 +1,42 @@
+.page-archives {
+  > .date {
+    margin-top: 16px;
+    font-size: 18px;
+    i {
+      // font-size: 24px;
+    }
+  }
+
+  > .post {
+    margin-left: 16px;
+    margin-top: 4px;
+    display: block;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    span.i {
+      padding: 0;
+      width: 3px;
+      height: 3px;
+      background-color: $gray-600;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    &:hover {
+      color: $primary;
+      .date {
+        color: inherit;
+      }
+    }
+    .title {
+      font-size: 16px;
+    }
+    .subtitle {
+      font-size: 14px;
+    }
+    .date {
+      font-size: 13px;
+      color: $secondary;
+    }
+  }
+}

@@ -19,6 +19,7 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
   - jekyll-seo-tag
+  - jekyll-archives
 
 google_fonts: 'Noto+sans+KR:100,200,300,400,500,600,700'
 

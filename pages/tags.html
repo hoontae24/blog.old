@@ -43,14 +43,17 @@ page.initListCollapse %}
       >
         <div class="list-wrapper">
           {% for post in tag.last %}
-          <!-- <div class="post btn-route" path="{{ post.url }}">
-					<span class="i"></span>&nbsp;
-          <span class="title">{{ post.title }}</span>
-          {% if post.subtitle %}
-          <span class="subtitle">&nbsp;-&nbsp;{{ post.subtitle }}</span>
-          {% endif %}
-        </div> -->
-          {% include post-card.html post=post %} {% endfor %}
+          <div class="post btn-route" path="{{ post.url }}">
+            <span class="i"></span>&nbsp;
+            <span class="title">{{ post.title }}</span>
+            {% if post.subtitle %}
+            <span class="subtitle">&nbsp;-&nbsp;{{ post.subtitle }}</span>
+            {% endif %}
+            {% if post.date %}
+            <!-- <span class="date">&nbsp;{{ post.date | date: '%Y. %m. %d' }}</span> -->
+            {% endif %}
+          </div>
+          {% endfor %}
         </div>
       </div>
       <hr />
