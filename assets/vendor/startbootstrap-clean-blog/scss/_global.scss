@@ -16,21 +16,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: 500;
   font-family: 'Noto sans KR', sans-serif;
   // @include sans-serif-font;
-  @media only screen and (max-width: 767px) {
-    font-weight: 500;
-  }
-}
-h5 {
-  font-weight: 500;
   @media only screen and (max-width: 767px) {
     font-weight: 400;
   }
 }
-h6 {
+h5 {
   font-weight: 400;
+  @media only screen and (max-width: 767px) {
+    font-weight: 300;
+  }
+}
+h6 {
+  font-weight: 300;
   @media only screen and (max-width: 767px) {
     font-weight: 300;
   }

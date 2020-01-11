@@ -19,7 +19,7 @@
         {% if post.subtitle %}
         {{ post.subtitle }}
         {% else %}
-        {{ post.excerpt | strip_html | truncatewords: 25 }}
+        {{ post.excerpt | strip_html | truncatewords: 10 }}
         {% endif %}
       </div>
       <div class="post-footer">
@@ -29,7 +29,7 @@
           {% else %}
           {{ site.author }}
           {% endif %} &middot; -->
-          {{ post.date | date: '%Y. %m. %d' }}
+          {{ post.date | date: '%Y.%m.%d' }}
           <!-- &middot; {% include read_time.html content=post.content %} -->
         </span>
         <div class="post-tags">
