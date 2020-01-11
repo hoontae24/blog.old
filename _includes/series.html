@@ -58,8 +58,8 @@
 <script>
   const btnFolded = document.querySelector('.btn.folded')
   const btnUnfolded = document.querySelector('.btn.unfolded')
-  btnFolded.classList.add('hidden')
-  btnUnfolded.classList.remove('hidden')  
+  btnFolded && btnFolded.classList.add('hidden')
+  btnUnfolded && btnUnfolded.classList.remove('hidden')  
 
   function toggleFold () {
     const btnFolded = document.querySelector('.btn.folded')
