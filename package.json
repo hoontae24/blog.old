@@ -4,7 +4,7 @@
   "title": "Stack Code",
   "description": "A developer's blog",
   "scripts": {
-    "dev": "bundle exec jekyll serve",
+    "dev": "bundle exec jekyll serve --drafts",
     "publish": "rake publish"
   },
   "keywords": [
