@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 <!-- Page Header -->
@@ -44,6 +45,9 @@ layout: default
         <div class="post-bottom-margin"></div>
         {% for tag in page.tags %} {% include tag-chip.html text=tag %} {%
         endfor %}
+        <div></div>
+        {% if page.comments %} {% include comments.html %} {% endif %}
+
         <div class="post-bottom-margin"></div>
 
         <!-- <div class="clearfix">
