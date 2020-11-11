@@ -1,4 +1,9 @@
 // Styling for the post page
+.post-link:hover,
+.post-link:focus {
+  text-decoration: none;
+}
+
 .post-preview {
   border: 1px solid $gray-300;
   padding: 16px;
@@ -13,6 +18,7 @@
   &:focus,
   &:hover {
     cursor: pointer;
+    text-decoration: none;
   }
 
   .post-wrapper {

@@ -1,43 +1,43 @@
 {% assign post = include.post %}
-
-<article
-  class="post-preview shadow-sm rounded btn-route"
-  path="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}"
->
-  <div class="post-wrapper">
-      {% if post.background %}
-      <div
-        class="thumbnail"
-        style="background-image: url('{{ post.background | prepend: site.baseurl | replace: '//', '/' }}')"
-      ></div>
-      {% endif %}
-    <div class="post-content">
-      {% if post.seriesId %} {% include series-label.html seriesId=post.seriesId
-      %} {% endif %}
-      <div class="post-title">{{ post.title }}</div>
-      <div class="post-subtitle">
-        {% if post.subtitle %}
-        {{ post.subtitle }}
-        {% else %}
-        {{ post.excerpt | strip_html | truncatewords: 10 }}
+<a class="post-link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+  <article
+    class="post-preview shadow-sm rounded"
+  >
+    <div class="post-wrapper">
+        {% if post.background %}
+        <div
+          class="thumbnail"
+          style="background-image: url('{{ post.background | prepend: site.baseurl | replace: '//', '/' }}')"
+        ></div>
         {% endif %}
-      </div>
-      <div class="post-footer">
-        <span class="post-meta">
-          <!-- {% if post.author %}
-          {{ post.author }}
+      <div class="post-content">
+        {% if post.seriesId %} {% include series-label.html seriesId=post.seriesId
+        %} {% endif %}
+        <div class="post-title">{{ post.title }}</div>
+        <div class="post-subtitle">
+          {% if post.subtitle %}
+          {{ post.subtitle }}
           {% else %}
-          {{ site.author }}
-          {% endif %} &middot; -->
-          {{ post.date | date: '%Y.%m.%d' }}
-          <!-- &middot; {% include read_time.html content=post.content %} -->
-        </span>
-        <div class="post-tags">
-          {% for tag in post.tags %} {% include tag-chip.html text=tag %} {%
-          endfor %}
+          {{ post.excerpt | strip_html | truncatewords: 10 }}
+          {% endif %}
+        </div>
+        <div class="post-footer">
+          <span class="post-meta">
+            <!-- {% if post.author %}
+            {{ post.author }}
+            {% else %}
+            {{ site.author }}
+            {% endif %} &middot; -->
+            {{ post.date | date: '%Y.%m.%d' }}
+            <!-- &middot; {% include read_time.html content=post.content %} -->
+          </span>
+          <div class="post-tags">
+            {% for tag in post.tags %} {% include tag-chip.html text=tag %} {%
+            endfor %}
+          </div>
         </div>
       </div>
+      
     </div>
-    
-  </div>
-</article>
+  </article>
+</a>
