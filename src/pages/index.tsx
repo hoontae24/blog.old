@@ -11,7 +11,9 @@ import { GetStaticProps } from "next"
 type Props = {}
 
 const Index = ({}: Props) => {
-  return <script>window.location = '/1'</script>
+
+
+  return null
 }
 
 export default withPageLayout()(Index)

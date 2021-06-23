@@ -23,7 +23,7 @@ const PostListItem = (props: Props) => {
         </a>
         <div className={style.subtitleArea}>
           <Typography.Text className={style.subtitle}>
-            {(post.subtitle || post.content || "").slice(0, 100)}
+            {post.subtitle || post.content || ""}
           </Typography.Text>
         </div>
         <div style={{ flexGrow: 1 }}></div>

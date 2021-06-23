@@ -72,7 +72,7 @@ export default withPageLayout({
         fontSize: 55,
       }}
     >
-      <h1>POST</h1>
+      <h1 style={{ color: "white" }}>POST</h1>
     </div>
   ),
 })(Index)
@@ -89,7 +89,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     "background",
     "tags",
     "content",
-  ])
+  ]).map((post) => ({ ...post, content: (post.content || "").slice(0, 100) }))
   const postCount = allPosts.length
   const pageCount = Math.max(1, Math.ceil(postCount / 10))
 

@@ -8,7 +8,9 @@ import style from "./Appbar.module.css"
 const Appbar: VFC = () => {
   const titleElement = (
     <Button type="link" href="/">
-      <Typography.Title level={4}>{config.title}</Typography.Title>
+      <Typography.Title level={4} style={{ color: "white" }}>
+        {config.title}
+      </Typography.Title>
     </Button>
   )
 
