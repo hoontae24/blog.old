@@ -11,11 +11,11 @@ const Tag = ({
   style?: CSSProperties
 }) => {
   return (
-    <a href={`/tags#${encodeURIComponent(tag)}`}>
+    // <a href={`/tags#${encodeURIComponent(tag)}`}>
       <AntdTag className={style.tag} color="blue" {...props}>
         {tag}
       </AntdTag>
-    </a>
+    // </a>
   )
 }
 
