@@ -7,6 +7,7 @@ import { withPageLayout } from "../../components/layouts/PageLayout"
 import moment from "moment"
 import "github-markdown-css/github-markdown.css"
 import Tag from "../../components/Tag"
+import CommentView from "../../components/CommentView"
 
 type Props = {
   post: PostType
@@ -25,11 +26,16 @@ const Post = ({ post, morePosts, preview }: Props) => {
         className="markdown-body"
         dangerouslySetInnerHTML={{ __html: post.content }}
       ></div>
-      <div style={{ marginTop: 40 }}>
+      <div style={{ marginTop: 40, marginBottom: 40 }}>
         {post.tags?.map?.((tag) => {
           return <Tag key={tag} tag={tag} />
         })}
       </div>
+      <CommentView
+        url={`https://hoontae24.github.io/posts/${post.slug}`}
+        id={post.slug}
+        title={post.title}
+      />
     </div>
   )
 }
