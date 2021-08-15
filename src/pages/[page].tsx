@@ -72,7 +72,7 @@ export default withPageLayout({
         fontSize: 55,
       }}
     >
-      <h1 style={{ color: "white" }}>POSTS</h1>
+      <h1 style={{ color: "white" }}>POST</h1>
     </div>
   ),
 })(Index)
