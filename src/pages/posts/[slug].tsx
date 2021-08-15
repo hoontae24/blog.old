@@ -41,6 +41,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
 }
 
 export default withPageLayout({
+  getPageTitle: (props) => props.post?.title || '',
   maxWidth: 720,
   masthead: (props) => {
     return (

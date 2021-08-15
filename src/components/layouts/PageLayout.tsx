@@ -1,9 +1,13 @@
+import Head from "next/head"
 import { FC, ReactNode } from "react"
 import PostType from "../../types/post"
 import Appbar from "../Appbar"
 import { createHOC } from "../hoc"
 
 const PageLayout: FC<{
+  getPageTitle?: (props: {
+    post?: PostType
+  }) => number | string | undefined | null
   backgroundImageSource?: string
   post?: PostType
   masthead?: (props: {
@@ -13,10 +17,20 @@ const PageLayout: FC<{
   }) => ReactNode
   maxWidth?: number
 }> = (props) => {
-  const { children, backgroundImageSource, post, masthead, maxWidth } = props
+  const {
+    children,
+    getPageTitle,
+    backgroundImageSource,
+    post,
+    masthead,
+    maxWidth,
+  } = props
+
+  const pageTitle = getPageTitle?.(props) || ""
 
   return (
     <>
+      <Head>{pageTitle && <title>{pageTitle}</title>}</Head>
       <div style={{ position: "relative" }}>
         <img
           src={backgroundImageSource}
