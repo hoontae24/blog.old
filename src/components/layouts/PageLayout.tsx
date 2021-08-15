@@ -3,6 +3,7 @@ import { FC, ReactNode } from "react"
 import PostType from "../../types/post"
 import Appbar from "../Appbar"
 import { createHOC } from "../hoc"
+import config from "../../../_data/config.json"
 
 const PageLayout: FC<{
   getPageTitle?: (props: {
@@ -26,11 +27,15 @@ const PageLayout: FC<{
     maxWidth,
   } = props
 
-  const pageTitle = getPageTitle?.(props) || ""
+  const pageTitle = getPageTitle?.(props) || config.title || ""
 
   return (
     <>
-      <Head>{pageTitle && <title>{pageTitle}</title>}</Head>
+      {pageTitle && (
+        <Head>
+          <title>{pageTitle}</title>
+        </Head>
+      )}
       <div style={{ position: "relative" }}>
         <img
           src={backgroundImageSource}
