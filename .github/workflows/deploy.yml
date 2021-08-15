@@ -33,6 +33,8 @@ jobs:
 
       - name: Build my App
         run: npm run build && npm run export
+        env:
+          GOOGLE_ANALYTICS_TRAKING_ID: ${{ secrets.GOOGLE_ANALYTICS_TRAKING_ID }}
       - run: touch out/.nojekyll
 
       - name: Deploy 🚀
