@@ -20,17 +20,18 @@ const fs = require("fs/promises")
   await traverse("")
   await fs.writeFile(
     ROOT + "/sitemap.xml",
-    `
-    <?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${nodes
-        .map((path) => {
-          const url = "https://hoontae24.github.io" + path
-          return `<url><loc>${url}</loc></url>`
-        })
-        .join("\n")}
-    </urlset>
-    `
+    `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${nodes
+  .map((path) => {
+    const url = "https://hoontae24.github.io" + path
+    return `  <url>
+    <loc>${url}</loc>
+    </url>`
+  })
+  .join("\n")}
+</urlset>
+`
   )
   await fs.readFile(ROOT + "/sitemap.xml", "utf8").then(console.log)
 })().catch(console.error)
