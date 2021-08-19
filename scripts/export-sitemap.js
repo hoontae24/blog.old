@@ -6,6 +6,9 @@ const fs = require('fs/promises');
     const children = await fs.readdir(`${ROOT}/` + path)
     for (const child of children) {
       const childPath = `${path}/${child}`
+      if (childPath.match(/index\.html$/)) {
+        nodes.push(`${path}/`)
+      }
       if (childPath.match(/\.html$/)) {
         nodes.push(childPath)
       }
