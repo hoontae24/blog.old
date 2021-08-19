@@ -41,5 +41,5 @@ jobs:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: out # The folder the action should deploy.
-          GIT_CONFIG_NAME: hoontae24
-          GIT_CONFIG_EMAIL: kadr8941@gmail.com
+          git-config-name: hoontae24
+          git-config-email: kadr8941@gmail.com
