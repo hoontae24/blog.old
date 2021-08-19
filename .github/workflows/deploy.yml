@@ -44,5 +44,6 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: out # The folder the action should deploy.
           single-commit: true
+          clean: true
           git-config-name: hoontae24
           git-config-email: kadr8941@gmail.com
