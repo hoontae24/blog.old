@@ -1,9 +1,9 @@
-import fs from 'fs/promise'
+const fs = require('fs/promise')
 
 (async () => {
   const ROOT = './out'
-  const nodes: string[] = []
-  const traverse = async (path: string) => {
+  const nodes = []
+  const traverse = async (path) => {
     const children = await fs.readdir(`${ROOT}/` + path)
     for (const child of children) {
       const childPath = `${path}/${child}`
