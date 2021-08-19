@@ -1,4 +1,4 @@
-const fs = require('fs/promise')
+const fs = require('fs/promises')
 
 (async () => {
   const ROOT = './out'
