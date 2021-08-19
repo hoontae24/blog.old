@@ -34,6 +34,7 @@ jobs:
       - name: Build my App
         run: npm run build && npm run export
       - run: touch out/.nojekyll
+      - run: npm run export-sitemap
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
