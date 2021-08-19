@@ -19,7 +19,7 @@ const fs = require("fs/promises")
   }
   await traverse("")
   await fs.writeFile(
-    ROOT + "/sitemap.txt",
+    ROOT + "/sitemap.xml",
     `
     <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -34,5 +34,5 @@ const fs = require("fs/promises")
     </urlset>
     `
   )
-  await fs.readFile(ROOT + "/sitemap.txt", "utf8").then(console.log)
+  await fs.readFile(ROOT + "/sitemap.xml", "utf8").then(console.log)
 })().catch(console.error)
