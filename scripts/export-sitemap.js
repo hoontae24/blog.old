@@ -20,4 +20,11 @@ const fs = require('fs/promises');
   await traverse('')
   await fs.writeFile(ROOT + '/sitemap.txt', nodes.map((path) => 'https://hoontae24.github.io' + path).join('\n'))
   await fs.readFile(ROOT + '/sitemap.txt', 'utf8').then(console.log)
+  
+  const robots = `
+  User-agent: *
+  Disallow:
+  Sitemap: https://hoontae24.github.io/sitemap.txt
+  `
+  await fs.writeFile(ROOT + '/robots.txt', robots)
 })().catch(console.error)
