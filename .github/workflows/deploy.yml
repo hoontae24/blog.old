@@ -34,6 +34,7 @@ jobs:
       - name: Build my App
         run: npm run build && npm run export
       - run: touch out/.nojekyll
+      - run: cp google09b70305a2e4c606.html ./out/google09b70305a2e4c606.html
       - run: npm run export-sitemap
 
       - name: Deploy 🚀
