@@ -10,7 +10,6 @@ export default class MyDocument extends Document {
         <Head>
           <GA />
           <GADS />
-
           <link href="/icons/favicon.ico" rel="shortcut icon" />
           <link href="/icons/favicon.ico" rel="icon" />
         </Head>
