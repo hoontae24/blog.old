@@ -36,26 +36,32 @@ const Index = ({ page, pageCount, allPosts, allTags }: Props) => {
           </Button>
         </div>
       </div>
-      <Paper
-        elevation={2}
+      <div
+        className="sidebar"
         style={{
-          alignSelf: "flex-start",
           width: 250,
           marginLeft: 16,
-          padding: 16,
         }}
       >
-        <Typography.Title level={5}>Tags</Typography.Title>
-        {allTags.map((tag) => {
-          return (
-            <Tag
-              key={tag}
-              tag={tag}
-              style={{ marginRight: 4, marginBottom: 4 }}
-            />
-          )
-        })}
-      </Paper>
+        <Paper
+          elevation={2}
+          style={{
+            padding: 16,
+            marginBottom: 16,
+          }}
+        >
+          <Typography.Title level={5}>Tags</Typography.Title>
+          {allTags.map((tag) => {
+            return (
+              <Tag
+                key={tag}
+                tag={tag}
+                style={{ marginRight: 4, marginBottom: 4 }}
+              />
+            )
+          })}
+        </Paper>
+      </div>
     </div>
   )
 }
