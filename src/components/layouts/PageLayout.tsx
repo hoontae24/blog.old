@@ -67,6 +67,10 @@ const PageLayout: FC<{
       <div style={{ maxWidth: maxWidth || 960, margin: "16px auto" }}>
         {children}
       </div>
+      <div
+        className="footer"
+        style={{ maxWidth: maxWidth || 960, margin: "16px auto" }}
+      ></div>
     </>
   )
 }
