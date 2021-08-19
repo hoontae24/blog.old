@@ -1,5 +1,4 @@
 const fs = require('fs/promises');
-
 (async () => {
   const ROOT = './out'
   const nodes = []
