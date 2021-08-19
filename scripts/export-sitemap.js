@@ -26,9 +26,7 @@ const fs = require("fs/promises")
       ${nodes
         .map((path) => {
           const url = "https://hoontae24.github.io" + path
-          return `<url>
-          <loc>${url}</loc>
-        </url>`
+          return `<url><loc>${url}</loc></url>`
         })
         .join("\n")}
     </urlset>
