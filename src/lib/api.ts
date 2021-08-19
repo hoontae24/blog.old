@@ -11,7 +11,10 @@ export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+export function getPostBySlug(
+  slug: string,
+  fields: string[] = []
+): Partial<PostType> {
   const realSlug = slug.replace(/\.md$/, "")
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, "utf8")
@@ -46,7 +49,12 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     }
   })
 
-  return items
+  const result = {
+    ...items,
+    tags: typeof items.tags === "string" ? items.tags.split(" ") : items.tags,
+  }
+
+  return result
 }
 
 export function getAllPosts(fields: (keyof PostType)[] = []) {
@@ -54,7 +62,7 @@ export function getAllPosts(fields: (keyof PostType)[] = []) {
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+    .sort((post1, post2) => ((post1.date || "") > (post2.date || "") ? -1 : 1))
     .sort((post1, post2) => (Number(post1.slug) > Number(post2.slug) ? -1 : 1))
   return posts
 }

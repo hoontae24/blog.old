@@ -89,7 +89,10 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     "background",
     "tags",
     "content",
-  ]).map((post) => ({ ...post, content: (post.content || "").slice(0, 100) }))
+    "hidden",
+  ])
+    .map((post) => ({ ...post, content: (post.content || "").slice(0, 100) }))
+    .filter((post) => !post.hidden)
   const postCount = allPosts.length
   const pageCount = Math.max(1, Math.ceil(postCount / 10))
 
