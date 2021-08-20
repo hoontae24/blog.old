@@ -27,7 +27,7 @@ ${nodes
     const url = "https://hoontae24.github.io" + path
     return `  <url>
     <loc>${url}</loc>
-    </url>`
+  </url>`
   })
   .join("\n")}
 </urlset>
