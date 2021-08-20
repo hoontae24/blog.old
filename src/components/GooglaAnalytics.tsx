@@ -20,6 +20,10 @@ const GA = () => {
           `,
         }}
       />
+      <meta
+        name="google-site-verification"
+        content="sZMzCJPtPjYrQ1vng3IoeUVnaOFrys1PeZbmvtt4QdM"
+      />
     </>
   )
 }
