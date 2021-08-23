@@ -34,6 +34,7 @@ jobs:
       - name: Build my App
         run: npm run build && npm run export
       - run: touch out/.nojekyll
+      - run: cp out/icons/favicon.ico out/favicon.ico
       - run: npm run export-sitemap
 
       - run: echo "Finish build and export successfully."
